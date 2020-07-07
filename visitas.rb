@@ -1,14 +1,14 @@
-# def promedio (a, b)
-# visitas = promedio.split
-#     puts visitas
-# end 
-# promedio 100, 20
-
-def promedio (array)
-    n = array.sum/array.count
+def promedio (visitas)
+    n = visitas.sum/visitas.count.to_f
     print n
 end
+    promedio([1000, 800, 250, 300, 500, 2500])
 
-    promedio([120, 50, 600, 30, 90, 10, 200, 0, 500])
+puts
 
-
+    def promedio (visitas)
+        n = visitas.inject(0) { |sum, x| sum + (x/visitas.count.to_f)}
+        print n
+    end
+        promedio([1000, 800, 250, 300, 500, 2500])
+    

@@ -1,15 +1,21 @@
-def promedio (a)
-n = a.count
-filtered = []
+def clear_steps (pasos)
+    pasos_sin_letras = pasos.select do |paso|
+    if paso.class == Integer  # added this "if" to ensure that program would work if the array contains Integer and String
+        paso
+    else
+    orig_length = paso.length
+    new_length = paso.to_i.to_s.length
+    orig_length == new_length
+    end
+end
+n = pasos_sin_letras.count
+pasos_validos = []
 n.times do |i|
-    if  a[i].to_i  >= 200 && a[i].to_i < 100000 && a[i].class == Integer
-    filtered.push a[i].to_i
+    if  pasos_sin_letras[i].to_i  >= 200 && pasos_sin_letras[i].to_i < 100000 
+    pasos_validos.push pasos_sin_letras[i].to_i
 end
 end
-print filtered
+print pasos_validos
 end
-promedio([100, 21, '231as', 2031, 1052000, '213b', 'b123'])
 
-# No pude resolver como recibir todos los datos, numeros y numeros con letras, todos entre comillas 
-# es decir, todos string, y solo transformas los que no tenian letras ... asi que al final tuve que 
-# pasar los numeros sin comillas
+clear_steps([300, '100', '21', '231as', '2031', '1052000', '213b', 'b123'])

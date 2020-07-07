@@ -11,7 +11,7 @@ lines.times do |i|
     procesos_filtrados << data2[i].to_i
     end
 end
-print procesos_filtrados
+
 File.write("procesos_filtrados_data", procesos_filtrados.join("\n"))
 end
 
